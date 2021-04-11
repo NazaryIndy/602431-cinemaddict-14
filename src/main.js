@@ -27,7 +27,7 @@ render(siteFooterElement, createMoviesAmountTemplate());
 const filmsElement = siteMainElement.querySelector('.films');
 const allFilmsElement = filmsElement.querySelector('.films-list .films-list__container');
 const mostCommentedElement = filmsElement.querySelector('.most-commented .films-list__container');
-const topRatedElement = filmsElement.querySelector('.top=rated .films-list__container');
+const topRatedElement = filmsElement.querySelector('.top-rated .films-list__container');
 
 for (let i = 0; i < FILMS_COINT; i++) {
   render(allFilmsElement, createFilmCardTemplate());
