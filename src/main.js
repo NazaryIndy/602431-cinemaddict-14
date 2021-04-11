@@ -26,14 +26,17 @@ render(siteFooterElement, createMoviesAmountTemplate());
 
 const filmsElement = siteMainElement.querySelector('.films');
 const allFilmsElement = filmsElement.querySelector('.films-list .films-list__container');
-const extraFilmsElements = filmsElement.querySelectorAll('.films-list--extra .films-list__container');
+const mostCommentedElement = filmsElement.querySelector('.most-commented .films-list__container');
+const topRatedElement = filmsElement.querySelector('.top-rated .films-list__container');
 
 for (let i = 0; i < FILMS_COINT; i++) {
   render(allFilmsElement, createFilmCardTemplate());
 }
 
-for (let i = 0; i < extraFilmsElements.length; i++) {
-  for (let j = 0; j < EXTRA_FILMS_COUNT; j++) {
-    render(extraFilmsElements[j], createFilmCardTemplate());
-  }
+for (let i = 0; i < EXTRA_FILMS_COUNT; i++) {
+  render(mostCommentedElement, createFilmCardTemplate());
+}
+
+for (let i = 0; i < EXTRA_FILMS_COUNT; i++) {
+  render(topRatedElement, createFilmCardTemplate());
 }
