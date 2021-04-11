@@ -30,10 +30,10 @@ const extraFilmsElements = filmsElement.querySelectorAll('.films-list--extra .fi
 
 for (let i = 0; i < FILMS_COINT; i++) {
   render(allFilmsElement, createFilmCardTemplate());
-};
+}
 
 for (let i = 0; i < extraFilmsElements.length; i++) {
   for (let j = 0; j < EXTRA_FILMS_COUNT; j++) {
     render(extraFilmsElements[j], createFilmCardTemplate());
   }
-};
+}
