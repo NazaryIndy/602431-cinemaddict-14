@@ -1,4 +1,4 @@
-import { getRandomInteger, getRandomFloat, generateDate, formatDate } from '../utils.js';
+import { getRandomInteger, getRandomFloat, getRandomDate } from '../utils.js';
 import { generateComment } from './comment.js';
 
 const MIN_SENTENCE_AMOUNT = 1;
@@ -203,8 +203,6 @@ const generateScreenwriters = () => {
 };
 
 export const generateFilm = () => {
-  const date = generateDate();
-
   return {
     title: generateTitle(),
     alternativeTitle: generateAltTitle(),
@@ -212,13 +210,12 @@ export const generateFilm = () => {
     description: generateDescription(),
     comments: generateComments(),
     rating: getRandomFloat(0, 10).toFixed(1),
-    year: formatDate(date),
     duration: getRandomInteger(MIN_DURATION, MAX_DURATION),
     genres: generateGenres(),
     director: generateDirector(),
     screenwriters: generateScreenwriters(),
     actors: generateActors(),
-    date: date,
+    date: getRandomDate(),
     country: generateCountry(),
     ageRating: generateAgeRating(),
     isWatchlist: Boolean(getRandomInteger(0, 1)),

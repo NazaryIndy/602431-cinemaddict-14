@@ -1,10 +1,10 @@
-import { formatDuration } from '../utils.js';
+import { formatDuration, formatDate } from '../utils.js';
 
 const MAX_DESCRIPTION_LENGTH = 140;
 
 export const createFilmCardTemplate = (film) => {
   const {
-    title, description, rating, year, duration, genres, poster, comments, isWatchlist, isWatched, isFavorite,
+    title, description, rating, date, duration, genres, poster, comments, isWatchlist, isWatched, isFavorite,
   } = film;
 
   const shortDescription = description.length <= MAX_DESCRIPTION_LENGTH
@@ -31,7 +31,7 @@ export const createFilmCardTemplate = (film) => {
     <h3 class="film-card__title">${title}</h3>
     <p class="film-card__rating">${rating}</p>
     <p class="film-card__info">
-      <span class="film-card__year">${year}</span>
+      <span class="film-card__year">${formatDate(date, 'YYYY')}</span>
       <span class="film-card__duration">${formatDuration(duration)}</span>
       <span class="film-card__genre">${genres[0]}</span>
     </p>

@@ -15,8 +15,8 @@ const getRandomFloat = (a = 1, b = 0) => {
   return lower + Math.random() * (upper - lower);
 };
 
-const generateDate = () => {
-  return dayjs().toDate();
+const getRandomDate = (start = new Date(1950, 0, 1), end = new Date()) => {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 };
 
 const formatDate = (value, format = 'YYYY') => {
@@ -30,4 +30,4 @@ const formatDuration = (duration) => {
 };
 
 
-export { getRandomFloat, getRandomInteger, generateDate, formatDate, formatDuration };
+export { getRandomFloat, getRandomInteger, getRandomDate, formatDate, formatDuration };

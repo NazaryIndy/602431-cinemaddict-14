@@ -1,4 +1,4 @@
-import { getRandomInteger, generateDate } from '../utils.js';
+import { getRandomInteger, getRandomDate } from '../utils.js';
 
 const generateEmotion = () => {
   const emoji = ['smile', 'sleeping', 'puke', 'angry'];
@@ -48,6 +48,6 @@ export const generateComment = () => {
     emotion: generateEmotion(),
     text: generateText(),
     author: generateAuthor(),
-    date: generateDate(),
+    date: getRandomDate(),
   };
 };
