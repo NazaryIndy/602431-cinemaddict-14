@@ -7,8 +7,12 @@ import {
   createFilmCardTemplate
 } from './view';
 
-const FILMS_COINT = 5;
+import { generateFilm } from './mock/film.js';
+
+const FILMS_COUNT = 20;
+const FILMS_TEMPLATE_COUNT = 5;
 const EXTRA_FILMS_COUNT = 2;
+const films = new Array(FILMS_COUNT).fill().map(generateFilm);
 
 const render = (container, template, place = 'beforeend') => {
   container.insertAdjacentHTML(place, template);
@@ -29,14 +33,15 @@ const allFilmsElement = filmsElement.querySelector('.films-list .films-list__con
 const mostCommentedElement = filmsElement.querySelector('.most-commented .films-list__container');
 const topRatedElement = filmsElement.querySelector('.top-rated .films-list__container');
 
-for (let i = 0; i < FILMS_COINT; i++) {
-  render(allFilmsElement, createFilmCardTemplate());
+for (let i = 0; i < FILMS_TEMPLATE_COUNT; i++) {
+  render(allFilmsElement, createFilmCardTemplate(films[i]));
 }
 
 for (let i = 0; i < EXTRA_FILMS_COUNT; i++) {
-  render(mostCommentedElement, createFilmCardTemplate());
+  render(mostCommentedElement, createFilmCardTemplate(films[i]));
 }
 
 for (let i = 0; i < EXTRA_FILMS_COUNT; i++) {
-  render(topRatedElement, createFilmCardTemplate());
+  render(topRatedElement, createFilmCardTemplate(films[i]));
 }
+
