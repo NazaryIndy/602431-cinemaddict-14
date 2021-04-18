@@ -18,7 +18,7 @@ const generateComments = () => {
   const commentsAmount = getRandomInteger(MIN_COMMENTS_AMOUNT, MAX_COMMENTS_AMOUNT);
   const filmComments = [];
 
-  for (let i = 0; i <= commentsAmount; i++) {
+  for (let i = 0; i < commentsAmount; i++) {
     filmComments.push(generateComment());
   }
 
