@@ -7,7 +7,11 @@ const createSiteMenuItemTemplate = (filter, isChecked) => {
     ? 'main-navigation__item--active'
     : '';
 
-  return `<a href="#${name}" class="main-navigation__item ${activeFilterClassName}">${capitalizeFirstLetter(name)} <span class="main-navigation__item-count">${count}</span></a>`;
+  const countTemplate = name === 'all'
+    ? ''
+    : `<span class="main-navigation__item-count">${count}</span></a>`;
+
+  return `<a href="#${name}" class="main-navigation__item ${activeFilterClassName}">${capitalizeFirstLetter(name)} ${countTemplate}`;
 };
 
 export const createSiteMenuTemplate = (filterItems) => {

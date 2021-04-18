@@ -6,3 +6,4 @@ export * from './movies-amount.js';
 export * from './show-more-button.js';
 export * from './film-card.js';
 export * from './film-details.js';
+export * from './list-empty.js';
