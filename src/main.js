@@ -40,7 +40,7 @@ const mostCommentedElement = filmsElement.querySelector('.most-commented .films-
 const topRatedElement = filmsElement.querySelector('.top-rated .films-list__container');
 
 if (films.length === 0) {
-  render(filmsListElement, createListEmptyTemplate())
+  render(filmsListElement, createListEmptyTemplate());
 } else {
   for (let i = 0; i < Math.min(films.length, FILM_COUNT_PER_STEP); i++) {
     render(allFilmsElement, createFilmCardTemplate(films[i]));
