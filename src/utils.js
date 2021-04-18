@@ -29,5 +29,12 @@ const formatDuration = (duration) => {
   return `${hours}h ${minutes}m`;
 };
 
+const getRandomId = () => {
+  return Math.random().toString(36).substr(2, 9);
+};
 
-export { getRandomFloat, getRandomInteger, getRandomDate, formatDate, formatDuration };
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+export { getRandomFloat, getRandomInteger, getRandomDate, formatDate, formatDuration, getRandomId, capitalizeFirstLetter };

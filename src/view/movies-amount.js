@@ -1,5 +1,5 @@
-export const createMoviesAmountTemplate = () => {
+export const createMoviesAmountTemplate = (amount) => {
   return `<section class="footer__statistics">
-    <p>130 291 movies inside</p>
+    <p>${amount} movies inside</p>
   </section>`;
 };

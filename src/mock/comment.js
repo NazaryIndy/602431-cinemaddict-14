@@ -1,4 +1,4 @@
-import { getRandomInteger, getRandomDate } from '../utils.js';
+import { getRandomInteger, getRandomDate, getRandomId } from '../utils.js';
 
 const generateEmotion = () => {
   const emoji = ['smile', 'sleeping', 'puke', 'angry'];
@@ -45,7 +45,8 @@ const generateAuthor = () => {
 
 export const generateComment = () => {
   return {
-    emotion: generateEmotion(),
+    id: getRandomId(),
+    emoji: generateEmotion(),
     text: generateText(),
     author: generateAuthor(),
     date: getRandomDate(),

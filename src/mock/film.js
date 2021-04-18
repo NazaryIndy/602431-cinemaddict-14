@@ -220,6 +220,6 @@ export const generateFilm = () => {
     ageRating: generateAgeRating(),
     isWatchlist: Boolean(getRandomInteger(0, 1)),
     isWatched: Boolean(getRandomInteger(0, 1)),
-    isFavourite: Boolean(getRandomInteger(0, 1)),
+    isFavorite: Boolean(getRandomInteger(0, 1)),
   };
 };
