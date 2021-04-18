@@ -9,3 +9,4 @@ export * from './film-details.js';
 export * from './list-empty.js';
 export * from './loading.js';
 export * from './new-comment.js';
+export * from './stats.js';

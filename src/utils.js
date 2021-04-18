@@ -34,7 +34,9 @@ const getRandomId = () => {
 };
 
 const capitalizeFirstLetter = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  const words = string.toLowerCase().split(' ');
+
+  return words.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 };
 
 export { getRandomFloat, getRandomInteger, getRandomDate, formatDate, formatDuration, getRandomId, capitalizeFirstLetter };

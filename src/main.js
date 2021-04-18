@@ -12,12 +12,14 @@ import {
 
 import { generateFilm } from './mock/film.js';
 import { generateFilters } from './mock/filter.js';
+import { generateUserInfo } from './mock/user.js';
 
 const FILM_COUNT = 20;
 const FILM_COUNT_PER_STEP = 5;
 const EXTRA_FILM_COUNT = 2;
 const films = new Array(FILM_COUNT).fill().map(generateFilm);
 const filters = generateFilters(films);
+const userStatus = generateUserInfo(films);
 
 const render = (container, template, place = 'beforeend') => {
   container.insertAdjacentHTML(place, template);
@@ -27,7 +29,7 @@ const siteHeaderElement = document.querySelector('.header');
 const siteMainElement = document.querySelector('.main');
 const siteFooterElement = document.querySelector('.footer');
 
-render(siteHeaderElement, createUserProfileTemplate());
+render(siteHeaderElement, createUserProfileTemplate(userStatus));
 render(siteMainElement, createSiteMenuTemplate(filters));
 render(siteMainElement, createSortTemplate());
 render(siteMainElement, createSiteContentTemplate(films.length));
