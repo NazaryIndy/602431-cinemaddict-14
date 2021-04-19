@@ -2,7 +2,7 @@ import { formatDate, formatDuration } from '../utils.js';
 import { createNewCommentTemplate } from './new-comment.js';
 
 const createGenreTemplate = (genres) => {
-  return genres.map((genre) => `<span class="film-details__genre">${genre}</span>`);
+  return genres.map((genre) => `<span class="film-details__genre">${genre}</span>`).join('');
 };
 
 const createCommentTemplate = (comments) => {
@@ -18,7 +18,7 @@ const createCommentTemplate = (comments) => {
         <button class="film-details__comment-delete">Delete</button>
       </p>
     </div>
-  </li>`);
+  </li>`).join('');
 };
 
 export const createFilmDetailsPopup = (film) => {

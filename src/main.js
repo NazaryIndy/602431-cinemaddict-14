@@ -7,7 +7,8 @@ import {
   createFilmCardTemplate,
   createFilmDetailsPopup,
   createShowMoreButtonTemplate,
-  createListEmptyTemplate
+  createListEmptyTemplate,
+  createStatsTemplate
 } from './view';
 
 import { generateFilm } from './mock/film.js';
@@ -19,7 +20,7 @@ const FILM_COUNT_PER_STEP = 5;
 const EXTRA_FILM_COUNT = 2;
 const films = new Array(FILM_COUNT).fill().map(generateFilm);
 const filters = generateFilters(films);
-const userStatus = generateUserInfo(films);
+const userInfo = generateUserInfo(films);
 
 const render = (container, template, place = 'beforeend') => {
   container.insertAdjacentHTML(place, template);
@@ -29,7 +30,7 @@ const siteHeaderElement = document.querySelector('.header');
 const siteMainElement = document.querySelector('.main');
 const siteFooterElement = document.querySelector('.footer');
 
-render(siteHeaderElement, createUserProfileTemplate(userStatus));
+render(siteHeaderElement, createUserProfileTemplate(userInfo));
 render(siteMainElement, createSiteMenuTemplate(filters));
 render(siteMainElement, createSortTemplate());
 render(siteMainElement, createSiteContentTemplate(films.length));
@@ -64,6 +65,7 @@ if (films.length === 0) {
 
     showMoreButton.addEventListener('click', (evt) => {
       evt.preventDefault();
+
       films
         .slice(renderedFilmCount, renderedFilmCount + FILM_COUNT_PER_STEP)
         .forEach((film) => render(allFilmsElement, createFilmCardTemplate(film), 'beforeend'));
@@ -75,6 +77,8 @@ if (films.length === 0) {
       }
     });
   }
+
+  render(siteMainElement, createStatsTemplate(userInfo));
 
   render(siteMainElement, createFilmDetailsPopup(films[0]));
 
