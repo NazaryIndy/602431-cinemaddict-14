@@ -49,7 +49,6 @@ const createStatsTemplate = ({status, count, duration, genre}) => {
   </section>`;
 };
 
-
 export default class Stats {
   constructor(userInfo) {
     this._userInfo = userInfo;

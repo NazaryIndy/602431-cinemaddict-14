@@ -121,7 +121,6 @@ const createFilmDetailsPopup = (film) => {
           </ul>
 
           <div class="film-details__new-comment">
-
           </div>
         </section>
       </div>

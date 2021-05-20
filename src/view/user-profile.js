@@ -7,7 +7,6 @@ const createUserProfileTemplate = ({status}) => {
   </section>`;
 };
 
-
 export default class UserProfile {
   constructor(status) {
     this._status = status;
